@@ -1,0 +1,105 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #436da5;
+}
+
+h2 {
+    color: #436da5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #436ea7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 20px; /* Espaçamento adicional abaixo do botão */
+    display: block;
+    width: 100%; /* Para centralizar o botão */
+}
+
+button:hover {
+    background-color: #3896e2; /* Alterando cor ao passar o mouse */
+    transform: scale(1.05); /* Pequeno efeito de escala */
+}
+
+input[type="radio"] {
+    display: block; /* Exibe cada opção abaixo da outra */
+    margin-bottom: 5px; /* Pequeno espaçamento abaixo de cada opção */
+}
+
+form div {
+    display: flex;
+    flex-direction: column; /* Alinhamento vertical das opções */
+    align-items: flex-start; /* Alinha as opções no eixo horizontal */
+    margin-bottom: 10px;
+}
+
+form div label {
+    margin-left: 0; /* Alinhado ao lado do botão de opção */
+}
+
+/* Adição de imagem para cada pergunta */
+.image-question {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px; /* Espaçamento após imagem */
+}
+
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+
+    input[type="text"], button {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    label, p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+}
