@@ -59,14 +59,7 @@ function salvarContato(event) {
                 window.location.href = `index.html`;
             });
         })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Erro ao salvar!',
-                text: 'Não foi possível enviar os dados. Tente novamente mais tarde.'
-            });
-            console.error(error);
-        });
+        
 }
 
 
