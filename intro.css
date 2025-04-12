@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #e6f0fa);
+    color: #104a8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.intro-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ✅ Nova logo ajustada */
+.logo {
+    height: 200px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #104a8d;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0c3a6d;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Responsivo para celulares */
+@media (max-width: 480px) {
+    .intro-container {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    input,
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}

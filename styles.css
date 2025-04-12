@@ -47,7 +47,7 @@ h1 {
 h2 {
     margin-top: 30px;
     margin-bottom: 15px;
-    color: #333;
+    color: #104a8d;
     font-size: 1.5em;
     font-weight: 600;
     position: relative;
@@ -160,7 +160,7 @@ footer a img:hover {
     transform: scale(1.1);
 }
 
-footer > div {
+footer>div {
     flex-wrap: wrap;
 }
 
@@ -173,7 +173,7 @@ footer > div {
         text-align: center;
     }
 
-    footer > div {
+    footer>div {
         flex-direction: column;
         align-items: center;
     }
@@ -181,21 +181,47 @@ footer > div {
 
 /* ========== Animações ========== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes growBar {
-    from { width: 0; }
-    to { width: 50px; }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50px;
+    }
 }
