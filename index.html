@@ -2,138 +2,33 @@
 <html lang="pt-br">
 
 <head>
-    <meta http-equiv="refresh" content="0; URL=intro.html">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Visão</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Óticas Alves - Início</title>
+    <link rel="stylesheet" href="intro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <!-- Logo Centralizada no topo -->
-    <div class="logo-container">
-        <img src="OTICAS ALVES LOGO.png" alt="Logo da Loja" style="width: 200px; display: block; margin: 0 auto;">
-    </div>
+    <div class="intro-container">
+        <img src="OTICAS ALVES LOGO.png" alt="Logo Óticas Alves" class="logo" />
+        <div class="intro-container">
+            <h1> Bem-vindo(a) à Óticas Alves!</h1>
+            <p>
+                Prepare-se para cuidar da sua visão com um teste simples, rápido e online.<br>
+                Em poucos minutos, você poderá entender melhor sua saúde visual — de forma prática e gratuita!
+            </p>
 
-    <div class="container">
-        <h1>Teste de Visão</h1>
-        <form id="formulario" onsubmit="enviarFormulario(event)">
-            <label for="nome" aria-label="Nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br><br>
+            <form id="contatoForm" onsubmit="salvarContato(event)">
 
-            <h2>Como vai a sua visão?</h2>
-            <div>
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            </div>
-            <div class="form-group">
-                <label for="pergunta1_sim">1. Você consegue ler pequenos textos com facilidade?</label>
-                <div>
-                    <div class="form-group">
-                        <img src="gettyimages-157338987-612x612.jpg" alt="Texto ilustrativo sobre leitura"
-                            class="image-question">
-                        <input type="radio" id="pergunta1_sim" name="pergunta1" value="sim" required>
-                        <label for="pergunta1_sim">Sim</label>
-                    </div>
-                </div>
-                <div>
-                    <input type="radio" id="pergunta1_nao" name="pergunta1" value="não">
-                    <label for="pergunta1_nao">Não</label>
-                </div>
-            </div>
-
-            <!-- Replicando a estrutura para as outras perguntas, incluindo imagens -->
-            <div class="form-group">
-                <label for="pergunta2_sim">2. Você tem dificuldade para enxergar a distância?</label>
-                <div>
-                    <img src="gettyimages-1164572160-612x612.jpg" alt="Texto ilustrativo sobre distância"
-                        class="image-question">
-                    <input type="radio" id="pergunta2_sim" name="pergunta2" value="sim" required>
-                    <label for="pergunta2_sim">Sim</label>
-                </div>
-                <div>
-                    <input type="radio" id="pergunta2_nao" name="pergunta2" value="não">
-                    <label for="pergunta2_nao">Não</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="pergunta3_sim">3. Seus olhos costumam arder ou lacrimejar?</label>
-                <div>
-                    <img src="gettyimages-1647878132-612x612.jpg" alt="Texto ilustrativo sobre olhos ardendo"
-                        class="image-question">
-                    <input type="radio" id="pergunta3_sim" name="pergunta3" value="sim" required>
-                    <label for="pergunta3_sim">Sim</label>
-                </div>
-                <div>
-                    <input type="radio" id="pergunta3_nao" name="pergunta3" value="não">
-                    <label for="pergunta3_nao">Não</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="pergunta4_sim">4. Você sente cansaço visual com frequência?</label>
-                <div>
-                    <img src="gettyimages-1468501590-612x612.jpg" alt="Texto ilustrativo sobre cansaço visual"
-                        class="image-question">
-                    <input type="radio" id="pergunta4_sim" name="pergunta4" value="sim" required>
-                    <label for="pergunta4_sim">Sim</label>
-                </div>
-                <div>
-                    <input type="radio" id="pergunta4_nao" name="pergunta4" value="não">
-                    <label for="pergunta4_nao">Não</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="pergunta5_sim">5. Você tem dificuldade para enxergar à noite?</label>
-                <div>
-                    <img src="A9R8765.jpg" alt="Texto ilustrativo sobre visão noturna" class="image-question">
-                    <input type="radio" id="pergunta5_sim" name="pergunta5" value="sim" required>
-                    <label for="pergunta5_sim">Sim</label>
-                </div>
-                <div>
-                    <input type="radio" id="pergunta5_nao" name="pergunta5" value="não">
-                    <label for="pergunta5_nao">Não</label>
-                </div>
-            </div>
-
-    </div>
-
-    <button type="submit">Enviar</button>
-    </form>
-    </div>
-
-    <footer style="background-color: #104a8d; color: #fff; padding: 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <!-- Informações da loja -->
-            <div>
-                <h4 style="margin-bottom: 10px;">Óticas Alves</h4>
-                <p>Endereço: Rua Raimundo da Conceição Tabireza</p>
-                <p>Dias d'Ávila, BA - CEP: 42850-000</p>
-            </div>
-
-            <!-- Redes sociais -->
-            <div style="display: flex; gap: 10px;">
-                <a href="https://www.instagram.com/oticasalves?igsh=NHcxOXg0ODVleTVq" target="_blank"
-                    style="color: #fff;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                        style="width: 30px;">
-                </a>
-                <a href="https://maps.app.goo.gl/NabKtFLhmEz6yG6KA" target="_blank" style="color: #fff;">
-                    <img src="https://img.icons8.com/?size=100&id=JutwBNbuFmI0&format=png&color=000000"
-                        alt="Google Maps" style="width: 30px;">
-                </a>
-            </div>
+                <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
+                <button type="submit">Começar o Teste</button>
+            </form>
         </div>
-        <!-- Desenvolvedor -->
-        <div style="text-align: center; margin-top: 20px;">
-            <p style="font-size: 14px;">Desenvolvido por <strong>mateus20.tosta@gmail.com</strong></p>
-        </div>
-    </footer>
 
-
-    <script src="script.js"></script>
+        <script src="intro.js"></script>
 </body>
 
 </html>

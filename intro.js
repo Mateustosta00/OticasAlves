@@ -56,7 +56,7 @@ function salvarContato(event) {
                 confirmButtonText: 'Começar'
             }).then(() => {
                 // Redireciona para index.html após o sucesso
-                window.location.href = `index.html`;
+                window.location.href = `teste.html`;
             });
         })
         .catch(error => {
@@ -75,11 +75,6 @@ function salvarContato(event) {
 
 
 
-
-
-setTimeout(function() {
-    window.location.href = "index.html";
-  }, 5000); // redireciona em 5 segundos
 
 
 
