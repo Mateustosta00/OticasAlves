@@ -57,7 +57,7 @@
                 confirmButtonText: 'Começar'
             }).then(() => {
                 // Redireciona após o sucesso
-                window.location.href = "index.html";
+                window.location.href = 'inicio.html';
             });
         })
         .catch(error => {
@@ -92,4 +92,20 @@
             document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
         }
     }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
