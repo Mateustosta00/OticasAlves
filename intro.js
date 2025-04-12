@@ -56,7 +56,7 @@ function salvarContato(event) {
                 confirmButtonText: 'Começar'
             }).then(() => {
                 // Redireciona para index.html após o sucesso
-                window.location.href = `teste.html`;
+                window.location.href = `index.html`;
             });
         })
         .catch(error => {
@@ -68,8 +68,6 @@ function salvarContato(event) {
             console.error(error);
         });
 }
-
-
 
 
 
