@@ -1,5 +1,5 @@
 // Máscara automática para o campo de telefone
-document.getElementById("telefone").addEventListener("input", function(e) {
+document.getElementById("telefone").addEventListener("input", function (e) {
     let input = e.target;
     let value = input.value.replace(/\D/g, ""); // Remove não-dígitos
 
@@ -46,25 +46,59 @@ function salvarContato(event) {
             Data: new Date().toLocaleString("pt-BR")
         })
     })
-    .then(response => {
-        if (!response.ok) throw new Error("Erro ao enviar dados");
+        .then(response => {
+            if (!response.ok) throw new Error("Erro ao enviar dados");
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Ótica alves agradece!',
-            html: `<p>Você será redirecionado para o teste.</p>`,
-            confirmButtonText: 'Começar'
-        }).then(() => {
-            // Redireciona para index.html após o sucesso
-            window.location.href = `index.html`;
+            Swal.fire({
+                icon: 'success',
+                title: 'Ótica alves agradece!',
+                html: `<p>Você será redirecionado para o teste.</p>`,
+                confirmButtonText: 'Começar'
+            }).then(() => {
+                // Redireciona para index.html após o sucesso
+                window.location.href = `index.html`;
+            });
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao salvar!',
+                text: 'Não foi possível enviar os dados. Tente novamente mais tarde.'
+            });
+            console.error(error);
         });
-    })
-    .catch(error => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Erro ao salvar!',
-            text: 'Não foi possível enviar os dados. Tente novamente mais tarde.'
-        });
-        console.error(error);
-    });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Impede o clique com o botão direito
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+// Impede as teclas F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function (e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+    }
+});
+
+// Tenta detectar a abertura do DevTools pelo tamanho da janela
+setInterval(function () {
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+        document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
+    }
+}, 1000);

@@ -66,11 +66,11 @@ function exibirMensagemSwal(mensagem, tipo) {
 function redirecionarWhatsApp(nome) {
     var mensagem = encodeURIComponent(`Olá, sou ${nome} , gostaria de marcar uma consulta.`);
     window.location.href = `https://wa.me/5571981869278?text=${mensagem}`;
-}document.addEventListener('contextmenu', function(e) {
+} document.addEventListener('contextmenu', function (e) {
     e.preventDefault(); // Desativa o menu de contexto (clicar com o botão direito)
 });
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Desativa teclas comuns para inspeção (F12, Ctrl + Shift + I, etc.)
     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J'))) {
         e.preventDefault();
@@ -91,8 +91,27 @@ document.addEventListener('keydown', function(e) {
 
 
 
+// Impede o clique com o botão direito
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
 
+// Impede as teclas F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function (e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+    }
+});
 
-
+// Tenta detectar a abertura do DevTools pelo tamanho da janela
+setInterval(function () {
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+        document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
+    }
+}, 1000);
 
 
