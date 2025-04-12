@@ -1,105 +1,201 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+/* Container geral */
 .container {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Logo no topo */
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
+    animation: slideDown 1s ease;
+}
+
+/* Títulos principais */
 h1 {
     text-align: center;
-    color: #436da5;
+    color: #104a8d;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #ccc;
+    animation: fadeInUp 1s ease-in-out;
 }
 
+/* Subtítulo */
 h2 {
-    color: #436da5;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+    position: relative;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #104a8d;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+    animation: growBar 0.8s ease-out;
 }
 
-label, p {
-    font-size: 16px;
-    margin-bottom: 5px;
+/* Grupos de perguntas */
+.form-group {
+    margin-bottom: 35px;
+    animation: fadeIn 0.8s ease forwards;
 }
 
-input[type="text"], button {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #436ea7;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    margin-bottom: 20px; /* Espaçamento adicional abaixo do botão */
-    display: block;
-    width: 100%; /* Para centralizar o botão */
-}
-
-button:hover {
-    background-color: #3896e2; /* Alterando cor ao passar o mouse */
-    transform: scale(1.05); /* Pequeno efeito de escala */
-}
-
-input[type="radio"] {
-    display: block; /* Exibe cada opção abaixo da outra */
-    margin-bottom: 5px; /* Pequeno espaçamento abaixo de cada opção */
-}
-
-form div {
-    display: flex;
-    flex-direction: column; /* Alinhamento vertical das opções */
-    align-items: flex-start; /* Alinha as opções no eixo horizontal */
-    margin-bottom: 10px;
-}
-
-form div label {
-    margin-left: 0; /* Alinhado ao lado do botão de opção */
-}
-
-/* Adição de imagem para cada pergunta */
+/* Imagens das perguntas */
 .image-question {
-    max-width: 40%;
+    display: block;
+    max-width: 100%;
     height: auto;
-    margin-bottom: 10px; /* Espaçamento após imagem */
+    margin: 10px 0 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-/* Media Queries para Responsividade */
-@media (min-width: 768px) {
+.image-question:hover {
+    transform: scale(1.03);
+}
+
+/* Input de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #104a8d;
+    box-shadow: 0 0 5px rgba(16, 74, 141, 0.3);
+}
+
+/* Radio buttons */
+input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+/* Labels */
+label {
+    font-size: 17px;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Botão de envio */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #104a8d;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0c3a6d;
+    transform: scale(1.02);
+}
+
+/* Rodapé */
+footer {
+    background-color: #104a8d;
+    color: #fff;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer a img {
+    transition: transform 0.2s ease;
+}
+
+footer a img:hover {
+    transform: scale(1.1);
+}
+
+footer > div {
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
     .container {
-        padding: 40px;
+        padding: 25px 15px;
     }
 
-    input[type="text"], button {
-        padding: 12px;
-        font-size: 18px;
+    footer {
+        text-align: center;
     }
 
-    label, p {
-        font-size: 18px;
+    footer > div {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
-@media (min-width: 1024px) {
-    .container {
-        max-width: 800px;
-    }
+/* ========== Animações ========== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growBar {
+    from { width: 0; }
+    to { width: 50px; }
 }
