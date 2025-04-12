@@ -79,7 +79,7 @@ function salvarContato(event) {
 
 setTimeout(function() {
     window.location.href = "index.html";
-  }, 500000); // redireciona em 5 segundos
+  }, 5000); // redireciona em 5 segundos
 
 
 
