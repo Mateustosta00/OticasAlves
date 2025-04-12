@@ -11,6 +11,15 @@
 </head>
 
 <body>
+    <script>
+        // Verifica se o usuário já viu a intro
+        if (!localStorage.getItem('introVisitado')) {
+          // Marca como visitado
+          localStorage.setItem('introVisitado', 'sim');
+          // Redireciona para intro.html
+          window.location.href = "intro.html";
+        }
+      </script>
     <!-- Logo Centralizada no topo -->
     <div class="logo-container">
         <img src="OTICAS ALVES LOGO.png" alt="Logo da Loja" style="width: 200px; display: block; margin: 0 auto;">
