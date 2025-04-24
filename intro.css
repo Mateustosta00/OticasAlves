@@ -1,109 +1,188 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilo para a tela */
 body {
+    margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #ffffff, #e6f0fa);
-    color: #104a8d;
+    background: linear-gradient(to bottom, #ffe8f0, #fff6fb);
+    color: #4d2b2b;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    text-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Impede que os corações saiam da tela */
 }
 
+/* Contêiner dos corações */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Impede que os corações interajam com outros elementos */
+    z-index: 2;
+}
+
+/* Corações caindo */
+.hearts-container .heart {
+    position: absolute;
+    font-size: 50px; /* Aumenta o tamanho do coração */
+    color: #ff66b2; /* Cor rosa */
+    animation: heartFall 4s infinite ease-in;
+    opacity: 0;
+}
+
+/* Animação de queda dos corações */
+@keyframes heartFall {
+    0% {
+        transform: translateY(-100px) scale(1); /* Começa acima da tela */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) scale(1.2); /* Desce até o fundo da tela */
+        opacity: 0; /* Torna o coração invisível ao final da animação */
+    }
+}
+
+/* Cartão principal */
 .intro-container {
-    background-color: #fff;
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
     max-width: 500px;
-    width: 100%;
-    animation: fadeIn 1s ease-in-out;
+    width: 90%;
+    backdrop-filter: blur(4px);
+    border: 2px solid #f7dce8;
 }
 
-/* ✅ Nova logo ajustada */
+/* Logo */
 .logo {
-    height: 200px;
-    width: auto;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1em;
+    max-width: 160px;
     margin-bottom: 30px;
-    color: #333;
 }
 
-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+/* Título com destaque */
+h1 {
+    font-size: 26px;
+    color: #b30059;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Parágrafo */
+p {
     font-size: 16px;
+    color: #5e2e40;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
-button {
+/* Campo de telefone */
+form input[type="tel"] {
     width: 100%;
     padding: 14px;
-    background-color: #104a8d;
-    color: #fff;
-    border: none;
+    border: 1px solid #eac3d2;
     border-radius: 10px;
     font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form input[type="tel"]:focus {
+    border-color: #b30059;
+}
+
+/* Botão glamouroso */
+form button {
+    width: 100%;
+    background: linear-gradient(to right, #b30059, #ff99cc);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
     font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(179, 0, 89, 0.2);
 }
 
-button:hover {
-    background-color: #0c3a6d;
+form button:hover {
+    transform: scale(1.02);
+    background: linear-gradient(to right, #99004d, #ff80bf);
+    box-shadow: 0 8px 24px rgba(179, 0, 89, 0.3); /* Sombra mais intensa no hover */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Label escondido para acessibilidade */
+.visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
-/* ✅ Responsivo para celulares */
-@media (max-width: 480px) {
+/* Media Query para telas menores */
+@media (max-width: 768px) {
     .intro-container {
         padding: 30px 20px;
     }
 
     .logo {
-        height: 120px;
-        margin-bottom: 10px;
+        max-width: 120px;
+        margin-bottom: 20px;
     }
 
     h1 {
-        font-size: 1.6em;
+        font-size: 22px;
     }
 
     p {
-        font-size: 1em;
+        font-size: 14px;
     }
 
-    input,
-    button {
-        font-size: 15px;
+    form input[type="tel"], form button {
+        font-size: 14px;
+    }
+
+    .hearts-container .heart {
+        font-size: 40px; /* Ajusta o tamanho dos corações para telas menores */
+    }
+}
+
+/* Media Query para telas muito pequenas */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Ajuste o preenchimento para dispositivos muito pequenos */
+    }
+
+    .intro-container {
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 18px; /* Ajusta o tamanho do título */
+    }
+
+    p {
+        font-size: 12px; /* Ajusta o tamanho do texto para ficar legível */
+    }
+
+    .logo {
+        max-width: 100px; /* Ajuste logo para telas menores */
+        margin-bottom: 15px;
+    }
+
+    form input[type="tel"], form button {
+        font-size: 12px; /* Ajusta o tamanho dos inputs e botão */
         padding: 12px;
     }
 }

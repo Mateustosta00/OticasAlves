@@ -23,7 +23,7 @@ function enviarFormulario(event) {
     // Mensagem baseada no número de respostas "não"
     if (respostasNao >= 4) {
         exibirMensagemSwal(
-            `Olá, ${nome},Sua visão está ótima! No entanto, que tal uma consulta com a equipe da Óticas Alves para garantir que tudo continue assim? Estamos ansiosos para te atender`,
+            `Olá, ${nome}!,Sua visão está ótima, e isso nos deixa muito felizes! Que tal agendar uma consulta com a equipe da Óticas Alves para manter tudo em dia? Aproveitamos também para desejar um Feliz Dia das Mães — cheio de amor, saúde e momentos inesquecíveis. Será um prazer te atender! ❤️`,
             "success"
         ).then((result) => {
             if (result.isConfirmed) {
@@ -32,7 +32,8 @@ function enviarFormulario(event) {
         });
     } else {
         exibirMensagemSwal(
-            `Olá, ${nome}, Detectamos uma alteração no seu teste de visão. Para garantir sua saúde ocular, estamos redirecionando você para entrar em contato com um de nossos profissionais. Estamos aqui para ajudar você a cuidar da sua visão!`,
+            `Olá, ${nome}! Detectamos uma alteração no seu teste de visão. Para garantir sua saúde ocular, recomendamos que entre em contato com um de nossos profissionais. Estamos aqui para cuidar da sua visão com carinho e atenção. Aproveitamos para desejar um Feliz Dia das Mães — com muito amor, saúde e momentos especiais. ❤️`
+,
             "error"
         ).then((result) => {
             if (result.isConfirmed) {
@@ -64,7 +65,8 @@ function exibirMensagemSwal(mensagem, tipo) {
 
 // Função para redirecionar para o WhatsApp após confirmação
 function redirecionarWhatsApp(nome) {
-    var mensagem = encodeURIComponent(`Olá, sou ${nome} , gostaria de marcar uma consulta.`);
+    var mensagem = encodeURIComponent(`Olá, fiz o teste de visão do Dia das Mães. Gostaria de marcar uma consulta😊`
+);
     window.location.href = `https://wa.me/5571981869278?text=${mensagem}`;
 } document.addEventListener('contextmenu', function (e) {
     e.preventDefault(); // Desativa o menu de contexto (clicar com o botão direito)
@@ -113,5 +115,13 @@ setInterval(function () {
         document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
     }
 }, 1000);
+
+
+
+
+
+
+
+
 
 

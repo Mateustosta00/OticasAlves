@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Visão</title>
+    <title>Teste de visão Óticas Alves 👓</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="container">
-        <h1>Teste de Visão</h1>
+        <h1>Feliz dia das Mães!</h1>
         <form id="formulario" onsubmit="enviarFormulario(event)">
             <label for="nome" aria-label="Nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br><br>
@@ -104,6 +104,7 @@
     </form>
     </div>
 
+
     <footer style="background-color: #104a8d; color: #fff; padding: 20px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <!-- Informações da loja -->
@@ -128,12 +129,65 @@
         </div>
         <!-- Desenvolvedor -->
         <div style="text-align: center; margin-top: 20px;">
-            <p style="font-size: 14px;">Desenvolvido por <strong>mateus20.tosta@gmail.com</strong></p>
+            <a href="https://www.instagram.com/matechsolutions25?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" style="text-decoration: none; color: inherit;">
+                <p style="font-size: 14px;">Desenvolvido por <strong>matechsolutions</strong></p>
+            </a>
         </div>
+
     </footer>
 
 
     <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- Elementos de corações caindo -->
+<div class="hearts-container"></div>
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML =  '&#10084;'; // O emoji do coração
+
+        // Definir posições aleatórias
+        const x = Math.random() * window.innerWidth; // Posição aleatória no eixo X
+        const delay = Math.random() * 5 + 2; // Tempo aleatório de animação para cada coração
+
+        heart.style.left = `${x}px`; // Posição aleatória no eixo X
+        heart.style.animationDuration = `${delay}s`; // Definir a duração da animação
+
+        // Adicionar o coração à tela
+        document.querySelector('.hearts-container').appendChild(heart);
+
+        // Remover o coração após a animação
+        setTimeout(() => {
+            heart.remove();
+        }, delay * 10000);
+    }
+
+    // Criar um coração a cada 0.5 segundos
+    setInterval(createHeart, 500);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
