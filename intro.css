@@ -231,3 +231,9 @@ form button:hover {
         padding: 0.625rem;
     }
 }
+/* Segunda imagem (Mãe e filho) */
+.lo {
+    max-width: 80%; /* Reduz a largura da imagem para 80% da largura da div */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 20px; /* Espaço entre as imagens */
+}
