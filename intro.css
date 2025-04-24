@@ -1,3 +1,10 @@
+/* Box-sizing global para evitar estouros de largura */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* Estilo para a tela */
 body {
     margin: 0;
@@ -10,7 +17,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 0 1rem; /* Melhora adaptação em telas muito pequenas */
+    padding: 0 1rem;
 }
 
 /* Contêiner dos corações */
@@ -27,7 +34,7 @@ body {
 /* Corações caindo */
 .hearts-container .heart {
     position: absolute;
-    font-size: 3.125rem; /* 50px */
+    font-size: 3.125rem;
     color: #ff66b2;
     animation: heartFall 4s infinite ease-in;
     opacity: 0;
@@ -50,7 +57,7 @@ body {
     position: relative;
     z-index: 1;
     background: white;
-    padding: 3.125rem 2.5rem; /* 50px 40px */
+    padding: 3.125rem 2.5rem;
     border-radius: 1.25rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -62,13 +69,13 @@ body {
 
 /* Logo */
 .logo {
-    max-width: 10rem; /* 160px */
-    margin-bottom: 1.875rem; /* 30px */
+    max-width: 10rem;
+    margin-bottom: 1.875rem;
 }
 
 /* Título com destaque */
 h1 {
-    font-size: 1.625rem; /* 26px */
+    font-size: 1.625rem;
     color: #b30059;
     margin-bottom: 1.25rem;
     font-weight: 600;
@@ -76,8 +83,8 @@ h1 {
 
 /* Parágrafo */
 p {
-    font-size: 1rem; /* 16px */
-    color: #3d1e2e; /* Melhor contraste */
+    font-size: 1rem;
+    color: #3d1e2e;
     margin-bottom: 1.875rem;
     line-height: 1.6;
 }
@@ -85,13 +92,15 @@ p {
 /* Campo de telefone */
 form input[type="tel"] {
     width: 100%;
-    padding: 0.875rem; /* 14px */
+    max-width: 100%;
+    padding: 0.875rem;
     border: 1px solid #eac3d2;
     border-radius: 0.625rem;
     font-size: 1rem;
     margin-bottom: 1.25rem;
     outline: none;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 form input[type="tel"]:focus {
@@ -101,6 +110,7 @@ form input[type="tel"]:focus {
 /* Botão glamouroso */
 form button {
     width: 100%;
+    max-width: 100%;
     background: linear-gradient(to right, #b30059, #ff99cc);
     color: white;
     border: none;
@@ -111,6 +121,7 @@ form button {
     cursor: pointer;
     transition: transform 0.2s, background 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(179, 0, 89, 0.2);
+    box-sizing: border-box;
 }
 
 form button:hover {
@@ -136,7 +147,7 @@ form button:hover {
     }
 
     .logo {
-        max-width: 7.5rem; /* 120px */
+        max-width: 7.5rem;
         margin-bottom: 1.25rem;
     }
 
@@ -148,12 +159,13 @@ form button:hover {
         font-size: 0.875rem;
     }
 
-    form input[type="tel"], form button {
+    form input[type="tel"],
+    form button {
         font-size: 0.875rem;
     }
 
     .hearts-container .heart {
-        font-size: 2.5rem; /* 40px */
+        font-size: 2.5rem;
     }
 }
 
@@ -161,7 +173,7 @@ form button:hover {
 @media (max-width: 480px) {
     .intro-container {
         width: 100%;
-        padding: 1.25rem;
+        padding: 1rem 0.75rem;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
@@ -178,7 +190,8 @@ form button:hover {
         margin-bottom: 0.9375rem;
     }
 
-    form input[type="tel"], form button {
+    form input[type="tel"],
+    form button {
         font-size: 0.75rem;
         padding: 0.75rem;
     }
@@ -203,7 +216,8 @@ form button:hover {
         max-width: 5rem;
     }
 
-    form input[type="tel"], form button {
+    form input[type="tel"],
+    form button {
         font-size: 0.6875rem;
         padding: 0.625rem;
     }
