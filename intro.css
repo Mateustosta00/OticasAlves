@@ -52,8 +52,9 @@ html, body {
 
 /* Imagem adicional */
 .image {
-    max-width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
-    height: auto; /* Ajusta a altura para manter a proporção */
+    max-width: 90%; /* Garante que a imagem não ocupe toda a largura */
+    width: auto; /* Mantém a proporção da imagem */
+    height: auto; /* Ajusta a altura proporcionalmente */
     margin-bottom: 2rem; /* Espaçamento entre as imagens e o texto */
 }
 
@@ -126,8 +127,7 @@ form button:hover {
     }
 
     .image {
-        max-width: 90%; /* Ajusta a imagem para se ajustar bem */
-        height: auto;
+        max-width: 80%; /* Ajusta a imagem para caber bem */
     }
 
     h1 {
@@ -157,8 +157,8 @@ form button:hover {
     }
 
     .image {
-        max-width: 80%; /* Ajusta a imagem para telas pequenas */
-        height: auto;
+        max-width: 70%; /* Ajusta a imagem para telas pequenas */
+        margin-bottom: 1.5rem; /* Garante bom espaçamento */
     }
 
     h1 {
@@ -188,8 +188,9 @@ form button:hover {
     }
 
     .image {
-        max-width: 70%; /* Ajusta ainda mais a imagem */
+        max-width: 60%; /* Ajusta a imagem para telas muito pequenas */
         height: auto;
+        margin-bottom: 1rem; /* Ajuste no espaçamento para telas bem pequenas */
     }
 
     h1 {
