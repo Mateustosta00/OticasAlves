@@ -3,13 +3,14 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to bottom, #ffe8f0, #fff6fb);
-    color: #4d2b2b;
+    color: #ffffff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Impede que os corações saiam da tela */
+    overflow: hidden;
+    padding: 0 1rem; /* Melhora adaptação em telas muito pequenas */
 }
 
 /* Contêiner dos corações */
@@ -19,15 +20,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Impede que os corações interajam com outros elementos */
+    pointer-events: none;
     z-index: 2;
 }
 
 /* Corações caindo */
 .hearts-container .heart {
     position: absolute;
-    font-size: 50px; /* Aumenta o tamanho do coração */
-    color: #ff66b2; /* Cor rosa */
+    font-size: 3.125rem; /* 50px */
+    color: #ff66b2;
     animation: heartFall 4s infinite ease-in;
     opacity: 0;
 }
@@ -35,12 +36,12 @@ body {
 /* Animação de queda dos corações */
 @keyframes heartFall {
     0% {
-        transform: translateY(-100px) scale(1); /* Começa acima da tela */
+        transform: translateY(-100px) scale(1);
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh) scale(1.2); /* Desce até o fundo da tela */
-        opacity: 0; /* Torna o coração invisível ao final da animação */
+        transform: translateY(calc(100% + 100px)) scale(1.2);
+        opacity: 0;
     }
 }
 
@@ -49,46 +50,46 @@ body {
     position: relative;
     z-index: 1;
     background: white;
-    padding: 50px 40px;
-    border-radius: 20px;
+    padding: 3.125rem 2.5rem; /* 50px 40px */
+    border-radius: 1.25rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 500px;
-    width: 90%;
+    width: 100%;
     backdrop-filter: blur(4px);
     border: 2px solid #f7dce8;
 }
 
 /* Logo */
 .logo {
-    max-width: 160px;
-    margin-bottom: 30px;
+    max-width: 10rem; /* 160px */
+    margin-bottom: 1.875rem; /* 30px */
 }
 
 /* Título com destaque */
 h1 {
-    font-size: 26px;
+    font-size: 1.625rem; /* 26px */
     color: #b30059;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     font-weight: 600;
 }
 
 /* Parágrafo */
 p {
-    font-size: 16px;
-    color: #5e2e40;
-    margin-bottom: 30px;
+    font-size: 1rem; /* 16px */
+    color: #3d1e2e; /* Melhor contraste */
+    margin-bottom: 1.875rem;
     line-height: 1.6;
 }
 
 /* Campo de telefone */
 form input[type="tel"] {
     width: 100%;
-    padding: 14px;
+    padding: 0.875rem; /* 14px */
     border: 1px solid #eac3d2;
-    border-radius: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
+    border-radius: 0.625rem;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -103,10 +104,10 @@ form button {
     background: linear-gradient(to right, #b30059, #ff99cc);
     color: white;
     border: none;
-    padding: 14px;
-    font-size: 16px;
+    padding: 0.875rem;
+    font-size: 1rem;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(179, 0, 89, 0.2);
@@ -115,7 +116,7 @@ form button {
 form button:hover {
     transform: scale(1.02);
     background: linear-gradient(to right, #99004d, #ff80bf);
-    box-shadow: 0 8px 24px rgba(179, 0, 89, 0.3); /* Sombra mais intensa no hover */
+    box-shadow: 0 8px 24px rgba(179, 0, 89, 0.3);
 }
 
 /* Label escondido para acessibilidade */
@@ -131,58 +132,79 @@ form button:hover {
 /* Media Query para telas menores */
 @media (max-width: 768px) {
     .intro-container {
-        padding: 30px 20px;
+        padding: 2rem 1.25rem;
     }
 
     .logo {
-        max-width: 120px;
-        margin-bottom: 20px;
+        max-width: 7.5rem; /* 120px */
+        margin-bottom: 1.25rem;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     p {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     form input[type="tel"], form button {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .hearts-container .heart {
-        font-size: 40px; /* Ajusta o tamanho dos corações para telas menores */
+        font-size: 2.5rem; /* 40px */
     }
 }
 
 /* Media Query para telas muito pequenas */
 @media (max-width: 480px) {
-    body {
-        padding: 10px; /* Ajuste o preenchimento para dispositivos muito pequenos */
-    }
-
     .intro-container {
         width: 100%;
-        padding: 20px;
+        padding: 1.25rem;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
-        font-size: 18px; /* Ajusta o tamanho do título */
+        font-size: 1.125rem;
     }
 
     p {
-        font-size: 12px; /* Ajusta o tamanho do texto para ficar legível */
+        font-size: 0.75rem;
     }
 
     .logo {
-        max-width: 100px; /* Ajuste logo para telas menores */
-        margin-bottom: 15px;
+        max-width: 6.25rem;
+        margin-bottom: 0.9375rem;
     }
 
     form input[type="tel"], form button {
-        font-size: 12px; /* Ajusta o tamanho dos inputs e botão */
-        padding: 12px;
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Breakpoint para dispositivos muito pequenos */
+@media (max-width: 360px) {
+    .intro-container {
+        padding: 1rem;
+        border-radius: 0.9375rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.6875rem;
+    }
+
+    .logo {
+        max-width: 5rem;
+    }
+
+    form input[type="tel"], form button {
+        font-size: 0.6875rem;
+        padding: 0.625rem;
     }
 }
