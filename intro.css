@@ -82,6 +82,17 @@ html, body {
     margin-bottom: 1.875rem;
 }
 
+/* Segunda imagem (Mãe e filho) */
+.lo {
+    width: 100%; /* Imagem ocupa 100% da largura da div */
+    max-width: 80%; /* Mas não ultrapassa 80% da largura da div */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 20px; /* Espaço entre as imagens */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza a imagem */
+}
+
 /* Título com destaque */
 h1 {
     font-size: 2.625rem;
@@ -176,6 +187,12 @@ form button:hover {
     .hearts-container .heart {
         font-size: 2.5rem;
     }
+
+    /* Ajuste responsivo para a imagem da Mãe e Filho */
+    .lo {
+        width: 100%; /* Imagem ocupa 100% da largura da div */
+        max-width: 70%; /* Mas não ultrapassa 70% da largura da div */
+    }
 }
 
 /* Media Query para telas muito pequenas */
@@ -204,6 +221,12 @@ form button:hover {
         font-size: 0.75rem;
         padding: 0.75rem;
     }
+
+    /* Ajuste para a imagem Mãe e Filho em telas pequenas */
+    .lo {
+        width: 100%;
+        max-width: 60%; /* A imagem ocupa no máximo 60% da largura da div */
+    }
 }
 
 /* Breakpoint para dispositivos muito pequenos */
@@ -230,10 +253,10 @@ form button:hover {
         font-size: 0.6875rem;
         padding: 0.625rem;
     }
-}
-/* Segunda imagem (Mãe e filho) */
-.lo {
-    max-width: 80%; /* Reduz a largura da imagem para 80% da largura da div */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-top: 20px; /* Espaço entre as imagens */
+
+    /* Ajuste para a imagem em dispositivos muito pequenos */
+    .lo {
+        width: 100%;
+        max-width: 50%; /* A imagem ocupa no máximo 50% da largura da div */
+    }
 }
