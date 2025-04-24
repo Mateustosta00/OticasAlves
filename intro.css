@@ -41,21 +41,19 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 /* Logo */
 .logo {
-    max-width: 8rem;
-    margin-bottom: 1.5rem;
+    max-width: 10rem;
+    margin-bottom: 2rem;
     width: 100%; /* Garante que a logo se ajuste bem */
 }
 
 /* Imagem adicional */
 .image {
-    max-width: 80%; /* Limita o tamanho da imagem para não ocupar a tela inteira */
-    width: auto; /* Mantém a proporção da imagem */
-    height: auto; /* Ajusta a altura proporcionalmente */
+    max-width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
+    height: auto; /* Ajusta a altura para manter a proporção */
     margin-bottom: 2rem; /* Espaçamento entre as imagens e o texto */
 }
 
@@ -124,11 +122,12 @@ form button:hover {
     }
 
     .logo {
-        max-width: 7rem; /* Logo um pouco menor */
+        max-width: 8rem; /* Logo um pouco menor */
     }
 
     .image {
-        max-width: 70%; /* Ajusta a imagem para caber bem */
+        max-width: 90%; /* Ajusta a imagem para se ajustar bem */
+        height: auto;
     }
 
     h1 {
@@ -158,8 +157,8 @@ form button:hover {
     }
 
     .image {
-        max-width: 60%; /* Ajusta a imagem para telas pequenas */
-        margin-bottom: 1.5rem; /* Garante bom espaçamento */
+        max-width: 80%; /* Ajusta a imagem para telas pequenas */
+        height: auto;
     }
 
     h1 {
@@ -189,9 +188,8 @@ form button:hover {
     }
 
     .image {
-        max-width: 50%; /* Ajusta a imagem para telas muito pequenas */
+        max-width: 70%; /* Ajusta ainda mais a imagem */
         height: auto;
-        margin-bottom: 1rem; /* Ajuste no espaçamento para telas bem pequenas */
     }
 
     h1 {
