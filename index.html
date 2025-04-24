@@ -41,7 +41,7 @@
 
         // Definir posições aleatórias
         const x = Math.random() * window.innerWidth; // Posição aleatória no eixo X
-        const delay = Math.random() * 5 + 2; // Tempo aleatório de animação para cada coração
+        const delay = Math.random() * 5 + 3; // Tempo aleatório de animação para cada coração
 
         heart.style.left = `${x}px`; // Posição aleatória no eixo X
         heart.style.animationDuration = `${delay}s`; // Definir a duração da animação
@@ -52,11 +52,11 @@
         // Remover o coração após a animação
         setTimeout(() => {
             heart.remove();
-        }, delay * 10000);
+        }, delay * 1000);
     }
 
     // Criar um coração a cada 0.5 segundos
-    setInterval(createHeart, 900000);
+    setInterval(createHeart, 1000);
 </script>
 
 
