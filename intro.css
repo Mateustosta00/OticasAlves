@@ -94,6 +94,7 @@ form input[type="tel"] {
     margin-bottom: 20px;
     outline: none;
     transition: all 0.3s ease;
+    max-width: 300px;
 }
 
 form input[type="tel"]:focus {
