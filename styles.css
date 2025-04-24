@@ -3,6 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100vw; /* Impede qualquer elemento de ultrapassar a largura da tela */
+}
+
+/* Garantir que o body e html não causem overflow horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Impede o scroll horizontal */
 }
 
 /* Corpo da página */
@@ -26,6 +33,7 @@ body {
     animation: fadeIn 1s ease-in-out;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden; /* Impede o scroll horizontal */
 }
 
 /* Logo no topo */
@@ -271,15 +279,19 @@ footer>div {
     height: 100%;
     pointer-events: none; /* Impede que os corações interajam com outros elementos */
     z-index: 2;
+    overflow: hidden; /* Impede que os corações saiam da tela */
 }
 
 /* Corações caindo */
 .hearts-container .heart {
     position: absolute;
+    left: 0; /* Garante que os corações fiquem dentro da tela */
+    max-width: 100%; /* Garante que os corações não ultrapassem a tela */
     font-size: 50px; /* Aumenta o tamanho do coração */
     color: #ff66b2; /* Cor rosa */
     animation: heartFall 4s infinite ease-in;
     opacity: 0;
+    white-space: nowrap;
 }
 
 /* Animação de queda dos corações */
