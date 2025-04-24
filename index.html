@@ -34,31 +34,29 @@
 <!-- Elementos de corações caindo -->
 <div class="hearts-container"></div>
 <script>
-   function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML =  '&#10084;'; // O emoji do coração
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML =  '&#10084;'; // O emoji do coração
 
-    // Definir posições aleatórias
-    const x = Math.random() * window.innerWidth; // Posição aleatória no eixo X
-    const delay = Math.random() * 6 + 4; // Tempo aleatório de animação para cada coração, aumentando a duração
+        // Definir posições aleatórias
+        const x = Math.random() * window.innerWidth; // Posição aleatória no eixo X
+        const delay = Math.random() * 5 + 3; // Tempo aleatório de animação para cada coração
 
-    heart.style.left = `${x}px`; // Posição aleatória no eixo X
-    heart.style.animationDuration = `${delay}s`; // Definir a duração da animação
-    heart.style.opacity = "0.5"; // Mais opacidade para suavizar o efeito
+        heart.style.left = `${x}px`; // Posição aleatória no eixo X
+        heart.style.animationDuration = `${delay}s`; // Definir a duração da animação
 
-    // Adicionar o coração à tela
-    document.querySelector('.hearts-container').appendChild(heart);
+        // Adicionar o coração à tela
+        document.querySelector('.hearts-container').appendChild(heart);
 
-    // Remover o coração após a animação
-    setTimeout(() => {
-        heart.remove();
-    }, delay * 1000);
-}
+        // Remover o coração após a animação
+        setTimeout(() => {
+            heart.remove();
+        }, delay * 1000);
+    }
 
-// Criar um coração a cada 2 segundos (2000 ms)
-setInterval(createHeart, 2000);
-
+    // Criar um coração a cada 0.5 segundos
+    setInterval(createHeart, 500);
 </script>
 
 
