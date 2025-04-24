@@ -3,14 +3,11 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    max-width: 100vw;
 }
 
-html, body {
+/* Estilo para a tela */
+body {
     margin: 0;
-    padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to bottom, #ffe8f0, #fff6fb);
     color: #ffffff;
@@ -30,7 +27,6 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* evita overflow lateral */
     pointer-events: none;
     z-index: 2;
 }
@@ -38,14 +34,10 @@ html, body {
 /* Corações caindo */
 .hearts-container .heart {
     position: absolute;
-    left: 0;
-    right: auto;
-    max-width: 100%;
     font-size: 3.125rem;
     color: #ff66b2;
     animation: heartFall 4s infinite ease-in;
     opacity: 0;
-    white-space: nowrap;
 }
 
 /* Animação de queda dos corações */
@@ -63,9 +55,9 @@ html, body {
 /* Cartão principal */
 .intro-container {
     position: relative;
-    z-index: -1;
+    z-index: 1;
     background: white;
-    padding: 3.125rem 2rem; /* diminuído pra evitar overflow */
+    padding: 3.125rem 2.5rem;
     border-radius: 1.25rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -73,18 +65,17 @@ html, body {
     width: 100%;
     backdrop-filter: blur(4px);
     border: 2px solid #f7dce8;
-    box-sizing: border-box;
 }
 
 /* Logo */
 .logo {
-    max-width: 12rem;
+    max-width: 10rem;
     margin-bottom: 1.875rem;
 }
 
 /* Título com destaque */
 h1 {
-    font-size: 2.625rem;
+    font-size: 1.625rem;
     color: #b30059;
     margin-bottom: 1.25rem;
     font-weight: 600;
@@ -157,7 +148,7 @@ form button:hover {
 
     .logo {
         max-width: 7.5rem;
-        margin-bottom: 12.25rem;
+        margin-bottom: 1.25rem;
     }
 
     h1 {
@@ -196,7 +187,7 @@ form button:hover {
 
     .logo {
         max-width: 6.25rem;
-        margin-bottom: 12.9375rem;
+        margin-bottom: 0.9375rem;
     }
 
     form input[type="tel"],
