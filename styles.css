@@ -15,8 +15,8 @@ html, body {
 /* Corpo da página */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    color: #ff66b2;
+    background-color: #ff66b2;
+    color: #fcf8fa;
     line-height: 1.7;
     scroll-behavior: smooth;
     font-size: 16px; /* Tamanho base */
