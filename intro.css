@@ -3,9 +3,9 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    max-width: 100vw;
 }
 
+/* Body e HTML */
 html, body {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ html, body {
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to bottom, #ffe8f0, #fff6fb);
-    color: #ffffff;
+    color: #3d1e2e;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,49 +23,12 @@ html, body {
     padding: 0 1rem;
 }
 
-/* Contêiner dos corações */
-.hearts-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* evita overflow lateral */
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* Corações caindo */
-.hearts-container .heart {
-    position: absolute;
-    left: 0;
-    right: auto;
-    max-width: 100%;
-    font-size: 3.125rem;
-    color: #ff66b2;
-    animation: heartFall 4s infinite ease-in;
-    opacity: 0;
-    white-space: nowrap;
-}
-
-/* Animação de queda dos corações */
-@keyframes heartFall {
-    0% {
-        transform: translateY(-100px) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(calc(100% + 100px)) scale(1.2);
-        opacity: 0;
-    }
-}
-
-/* Cartão principal */
+/* Contêiner principal */
 .intro-container {
     position: relative;
     z-index: 1;
     background: white;
-    padding: 3.125rem 2rem; /* diminuído pra evitar overflow */
+    padding: 2rem; /* Ajuste para garantir espaço adequado */
     border-radius: 1.25rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -74,30 +37,31 @@ html, body {
     backdrop-filter: blur(4px);
     border: 2px solid #f7dce8;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Logo */
 .logo {
-    max-width: 12rem;
-    margin-bottom: 1.875rem;
+    max-width: 10rem;
+    margin-bottom: 2rem;
+    width: 100%; /* Garante que a logo se ajuste bem */
 }
 
-/* Segunda imagem (Mãe e filho) */
-.lo {
-    width: 100%; /* Imagem ocupa 100% da largura da div */
-    max-width: 80%; /* Mas não ultrapassa 80% da largura da div */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-top: 20px; /* Espaço entre as imagens */
-    display: block;
-    margin-left: auto;
-    margin-right: auto; /* Centraliza a imagem */
+/* Imagem adicional */
+.image {
+    max-width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
+    height: auto; /* Ajusta a altura para manter a proporção */
+    margin-bottom: 2rem; /* Espaçamento entre as imagens e o texto */
 }
 
-/* Título com destaque */
+/* Título */
 h1 {
     font-size: 2.625rem;
     color: #b30059;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
@@ -105,19 +69,20 @@ h1 {
 p {
     font-size: 1rem;
     color: #3d1e2e;
-    margin-bottom: 1.875rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 /* Campo de telefone */
 form input[type="tel"] {
     width: 100%;
-    max-width: 100%;
     padding: 0.875rem;
     border: 1px solid #eac3d2;
     border-radius: 0.625rem;
     font-size: 1rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     outline: none;
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -127,10 +92,9 @@ form input[type="tel"]:focus {
     border-color: #b30059;
 }
 
-/* Botão glamouroso */
+/* Botão */
 form button {
     width: 100%;
-    max-width: 100%;
     background: linear-gradient(to right, #b30059, #ff99cc);
     color: white;
     border: none;
@@ -142,6 +106,7 @@ form button {
     transition: transform 0.2s, background 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(179, 0, 89, 0.2);
     box-sizing: border-box;
+    margin-top: 1.25rem; /* Ajuste no espaçamento do botão */
 }
 
 form button:hover {
@@ -150,29 +115,23 @@ form button:hover {
     box-shadow: 0 8px 24px rgba(179, 0, 89, 0.3);
 }
 
-/* Label escondido para acessibilidade */
-.visually-hidden {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-/* Media Query para telas menores */
+/* Responsividade - para telas menores */
 @media (max-width: 768px) {
     .intro-container {
-        padding: 2rem 1.25rem;
+        padding: 1.5rem; /* Ajuste no padding para telas menores */
     }
 
     .logo {
-        max-width: 7.5rem;
-        margin-bottom: 12.25rem;
+        max-width: 8rem; /* Logo um pouco menor */
+    }
+
+    .image {
+        max-width: 90%; /* Ajusta a imagem para se ajustar bem */
+        height: auto;
     }
 
     h1 {
-        font-size: 1.375rem;
+        font-size: 1.5rem;
     }
 
     p {
@@ -183,24 +142,23 @@ form button:hover {
     form button {
         font-size: 0.875rem;
     }
-
-    .hearts-container .heart {
-        font-size: 2.5rem;
-    }
-
-    /* Ajuste responsivo para a imagem da Mãe e Filho */
-    .lo {
-        width: 100%; /* Imagem ocupa 100% da largura da div */
-        max-width: 70%; /* Mas não ultrapassa 70% da largura da div */
-    }
 }
 
-/* Media Query para telas muito pequenas */
+/* Para telas muito pequenas */
 @media (max-width: 480px) {
     .intro-container {
         width: 100%;
-        padding: 1rem 0.75rem;
+        padding: 1rem;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        max-width: 6rem; /* Logo ainda menor */
+    }
+
+    .image {
+        max-width: 80%; /* Ajusta a imagem para telas pequenas */
+        height: auto;
     }
 
     h1 {
@@ -211,29 +169,27 @@ form button:hover {
         font-size: 0.75rem;
     }
 
-    .logo {
-        max-width: 6.25rem;
-        margin-bottom: 12.9375rem;
-    }
-
     form input[type="tel"],
     form button {
         font-size: 0.75rem;
         padding: 0.75rem;
     }
-
-    /* Ajuste para a imagem Mãe e Filho em telas pequenas */
-    .lo {
-        width: 100%;
-        max-width: 60%; /* A imagem ocupa no máximo 60% da largura da div */
-    }
 }
 
-/* Breakpoint para dispositivos muito pequenos */
+/* Para dispositivos muito pequenos */
 @media (max-width: 360px) {
     .intro-container {
         padding: 1rem;
         border-radius: 0.9375rem;
+    }
+
+    .logo {
+        max-width: 5rem; /* Logo ainda menor */
+    }
+
+    .image {
+        max-width: 70%; /* Ajusta ainda mais a imagem */
+        height: auto;
     }
 
     h1 {
@@ -244,19 +200,9 @@ form button:hover {
         font-size: 0.6875rem;
     }
 
-    .logo {
-        max-width: 5rem;
-    }
-
     form input[type="tel"],
     form button {
         font-size: 0.6875rem;
         padding: 0.625rem;
-    }
-
-    /* Ajuste para a imagem em dispositivos muito pequenos */
-    .lo {
-        width: 100%;
-        max-width: 50%; /* A imagem ocupa no máximo 50% da largura da div */
     }
 }
