@@ -1,111 +1,83 @@
+// Função para aplicar a máscara
+function aplicarMascaraTelefone(valor) {
+    let value = valor.replace(/\D/g, ""); // Remove tudo que não é número
 
-    // Máscara automática para o campo de telefone
-    document.getElementById("telefone").addEventListener("input", function (e) {
-        let input = e.target;
-        let value = input.value.replace(/\D/g, ""); // Remove não-dígitos
+    // Limitar a 11 dígitos no máximo
+    if (value.length > 11) value = value.slice(0, 11);
 
-        if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
-
-        // Formatação dinâmica
-        if (value.length >= 2 && value.length <= 6) {
-            input.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-        } else if (value.length > 6 && value.length <= 10) {
-            input.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
-        } else if (value.length > 10) {
-            input.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    // Se tiver entre 8 ou 9 dígitos (sem DDD ou com DDD)
+    if (value.length <= 9) {
+        if (value.length <= 4) {
+            // Para 4 ou menos dígitos: "8356-0631"
+            return value.replace(/(\d{4})(\d{0,4})/, '$1-$2');
         } else {
-            input.value = value;
+            // Para 9 dígitos: "98356-0631"
+            return value.replace(/(\d{5})(\d{0,4})/, '$1-$2');
         }
-    });
+    } else if (value.length === 10) {
+        // Fixo com DDD: "(71) 3234-5678"
+        return `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
+    } else {
+        // Celular com DDD: "(71) 98356-0631"
+        return `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    }
+}
 
-    // Função para salvar o contato
-    function salvarContato(event) {
-        event.preventDefault();
+// Aplica a máscara automaticamente quando o usuário digita
+document.getElementById("telefone").addEventListener("input", function (e) {
+    e.target.value = aplicarMascaraTelefone(e.target.value);
+});
 
-        const telefone = document.getElementById("telefone").value.trim();
+// Função para salvar o contato
+function salvarContato(event) {
+    event.preventDefault();
 
-        // Validação de formato
-        const telefoneValido = /^\(\d{2}\)\s\d{4,5}-\d{4}$/.test(telefone);
+    const input = document.getElementById("telefone");
+    input.value = aplicarMascaraTelefone(input.value); // Força a máscara antes da validação
 
-        if (!telefoneValido) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Telefone inválido!',
-                text: 'Digite um número válido no formato (XX) XXXXX-XXXX.'
-            });
-            return;
-        }
+    const telefone = input.value.trim();
 
-        // Envia os dados para o SheetMonkey
-        fetch("https://api.sheetmonkey.io/form/4Fv7geQosY2TsL1AFoYo4v", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                Telefone: telefone,
-                Data: new Date().toLocaleString("pt-BR")
-            })
-        })
-        .then(response => {
-            if (!response.ok) throw new Error("Erro ao enviar dados");
+    // Validação de formato para 8, 9 ou 11 dígitos, com ou sem DDD
+    const telefoneValido = /^(\(\d{2}\)\s?)?\d{4,5}-\d{4}$/.test(telefone);
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Ótica Alves agradece!',
-                html: `<p>Você será redirecionado para o teste.</p>`,
-                confirmButtonText: 'Começar'
-            }).then(() => {
-                // Redireciona após o sucesso
-                window.location.href = 'inicio.html';
-            });
-        })
-        .catch(error => {
-            console.error("Erro na requisição:", error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Erro ao enviar!',
-                text: 'Não foi possível enviar seus dados. Tente novamente.'
-            });
+    if (!telefoneValido) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Telefone inválido!',
+            text: 'Digite um número válido, com 8, 9 ou 11 dígitos, com ou sem DDD. Ex: (71) 98356-0631 ou 983560631.'
         });
+        return;
     }
 
-    // Impede o clique com o botão direito
-    document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
+    // Envia os dados para o SheetMonkey
+    fetch("https://api.sheetmonkey.io/form/4Fv7geQosY2TsL1AFoYo4v", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            Telefone: telefone,
+            Data: new Date().toLocaleString("pt-BR")
+        })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Erro ao enviar dados");
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Ótica Alves agradece!',
+            html: `<p>Você será redirecionado para o teste.</p>`,
+            confirmButtonText: 'Começar'
+        }).then(() => {
+            window.location.href = 'inicio.html';
+        });
+    })
+    .catch(error => {
+        console.error("Erro na requisição:", error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro ao enviar!',
+            text: 'Não foi possível enviar seus dados. Tente novamente.'
+        });
     });
-
-    // Impede as teclas F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-    document.addEventListener('keydown', function (e) {
-        if (
-            e.key === 'F12' ||
-            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-            (e.ctrlKey && e.key === 'U')
-        ) {
-            e.preventDefault();
-        }
-    });
-
-    // Detecta se DevTools está aberto pelo tamanho da janela
-    setInterval(function () {
-        if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
-            document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
-        }
-    }, 1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
