@@ -56,27 +56,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Subtítulo */
-h2 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: #ff66b2;
-    font-size: 1.5em;
-    font-weight: 600;
-    position: relative;
-}
-
-h2::after {
-    content: "";
-    width: 50px;
-    height: 3px;
-    background: #b30059;
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    border-radius: 2px;
-    animation: growBar 0.8s ease-out;
-}
 
 /* Grupos de perguntas */
 .form-group {

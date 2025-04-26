@@ -65,7 +65,7 @@ function salvarContato(event) {
 
         Swal.fire({
             icon: 'success',
-            title: 'Ótica Alves agradece!',
+            title: 'Ótica Alves sua melhor escolha!',
             html: `<p>Você será redirecionado para o teste.</p>`,
             confirmButtonText: 'Começar'
         }).then(() => {
