@@ -78,7 +78,7 @@ h1 {
 
 /* Parágrafo */
 p {
-    font-size: 20px;
+    font-size: 16px;
     color: #5e2e40;
     margin-bottom: 30px;
     line-height: 1.6;
@@ -148,7 +148,7 @@ form button:hover {
     }
 
     p {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     form input[type="tel"], form button {
@@ -177,7 +177,7 @@ form button:hover {
     }
 
     p {
-        font-size: 20px; /* Ajusta o tamanho do texto para ficar legível */
+        font-size: 12px; /* Ajusta o tamanho do texto para ficar legível */
     }
 
     .logo {
