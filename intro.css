@@ -67,8 +67,7 @@ html, body {
 .logo {
     max-width: 160px;
     margin-bottom: 30px;
-    margin-top: -96px; /* Move o botão um pouco mais para cima */
-
+    
 }
 
 /* Título com destaque */
