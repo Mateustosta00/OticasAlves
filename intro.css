@@ -75,6 +75,8 @@ h1 {
     color: #b30059;
     margin-bottom: 20px;
     font-weight: 600;
+    margin-top: -100px; /* Move o botão um pouco mais para cima */
+
 }
 
 /* Parágrafo */
