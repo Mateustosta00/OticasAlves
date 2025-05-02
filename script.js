@@ -23,7 +23,7 @@ function enviarFormulario(event) {
     // Mensagem baseada no número de respostas "não"
     if (respostasNao >= 4) {
         exibirMensagemSwal(
-            `Olá, ${nome}!,Sua visão está ótima, e isso nos deixa muito felizes! Que tal agendar uma consulta com a equipe da Óticas Alves para manter tudo em dia? Aproveitamos também para desejar um Feliz Dia das Mães — cheio de amor, saúde e momentos inesquecíveis. Será um prazer te atender! ❤️`,
+            `Olá, ${nome}!,Sua visão está ótima e queremos mantê-la assim! Agende sua consulta na Óticas Alves e aproveite: você ganhou 10% de cashback no exame. Feliz Dia das Mães, com amor e saúde! ❤️`,
             "success"
         ).then((result) => {
             if (result.isConfirmed) {
@@ -32,7 +32,7 @@ function enviarFormulario(event) {
         });
     } else {
         exibirMensagemSwal(
-            `Olá, ${nome}! Detectamos uma alteração no seu teste de visão. Para garantir sua saúde ocular, recomendamos que entre em contato com um de nossos profissionais. Estamos aqui para cuidar da sua visão com carinho e atenção. Aproveitamos para desejar um Feliz Dia das Mães — com muito amor, saúde e momentos especiais. ❤️`
+            `Olá, ${nome}!Detectamos uma alteração na sua visão. Agende com nossos profissionais e aproveite: você ganhou 10% de cashback para atualizar seu exame de vista! Feliz Dia das Mães, com saúde e carinho! ❤️`
 ,
             "error"
         ).then((result) => {
@@ -65,7 +65,7 @@ function exibirMensagemSwal(mensagem, tipo) {
 
 // Função para redirecionar para o WhatsApp após confirmação
 function redirecionarWhatsApp(nome) {
-    var mensagem = encodeURIComponent(`Olá, fiz o teste de visão do Dia das Mães. Gostaria de marcar uma consulta😊`
+    var mensagem = encodeURIComponent(`Olá, realizei o teste de visão do Dia das Mães e recebi 10% de cashback. Gostaria de agendar minha consulta e aproveitar o desconto.😊`
 );
     window.location.href = `https://wa.me/5571981869278?text=${mensagem}`;
 } document.addEventListener('contextmenu', function (e) {
