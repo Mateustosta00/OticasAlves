@@ -190,3 +190,35 @@ form button:hover {
         padding: 12px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.texto-imagem {
+    text-align: center; /* Centraliza o texto e a imagem dentro do parágrafo */
+    margin: 0 auto; /* Garante que o conteúdo do parágrafo esteja centralizado */
+    max-width: 90%; /* Limita a largura máxima do parágrafo */
+}
+
+.imagem-dia-das-maes {
+    max-width: 80%; /* Ajusta a imagem para ser um pouco menor */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 10px; /* Espaçamento entre o texto e a imagem */
+    display: block; /* Faz a imagem ser tratada como um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
