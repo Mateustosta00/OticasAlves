@@ -64,13 +64,10 @@ html, body {
 
 
 /* Logo */
-
 .logo {
-    display: block;
-    margin: 20px auto 0 auto; /* Topo com 20px e centralizado */
-    max-width: 150px; /* Responsivo: máximo 150px de largura */
-    width: 100%;
-    height: auto; /* Mantém a proporção */
+    max-width: 160px;
+    margin-bottom: 30px;
+    
 }
 
 /* Título com destaque */
