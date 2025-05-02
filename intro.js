@@ -81,3 +81,37 @@ function salvarContato(event) {
         });
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Impede o clique com o botão direito
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+// Impede as teclas F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function (e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+    }
+});
+
+// Tenta detectar a abertura do DevTools pelo tamanho da janela
+setInterval(function () {
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+        document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
+    }
+}, 1000);
