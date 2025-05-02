@@ -56,8 +56,8 @@ html, body {
     border-radius: 12px; /* Leve arredondamento para suavizar as bordas */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ajustei a sombra para ser mais sutil */
     text-align: center;
-    max-width: 3050px; /* Diminui ainda mais o tamanho máximo do contêiner */
-    width: 90%;
+    max-width: 350px; /* Diminui ainda mais o tamanho máximo do contêiner */
+    width: 900%;
     backdrop-filter: blur(4px);
     border: 2px solid #f7dce8;
 }
