@@ -23,7 +23,7 @@ function enviarFormulario(event) {
     // Mensagem baseada no número de respostas "não"
     if (respostasNao >= 4) {
         exibirMensagemSwal(
-            `Olá, ${nome}! ,Sua visão está ótima e queremos mantê-la assim! Agende sua consulta na Óticas Alves e aproveite: você ganhou 10% de cashback no exame. Feliz Dia das Mães, com amor e saúde! ❤️`,
+            `Olá ${nome}! ,Sua visão está ótima e queremos mantê-la assim! Agende sua consulta na Óticas Alves e aproveite: você ganhou 10% de cashback no exame. Feliz Dia das Mães, com amor e saúde! ❤️`,
             "success"
         ).then((result) => {
             if (result.isConfirmed) {
@@ -32,7 +32,7 @@ function enviarFormulario(event) {
         });
     } else {
         exibirMensagemSwal(
-            `Olá, ${nome}! Detectamos uma alteração na sua visão. Agende com nossos profissionais e aproveite: você ganhou 10% de cashback para atualizar seu exame de vista! Feliz Dia das Mães, com saúde e carinho! ❤️`
+            `Olá ${nome}! Detectamos uma alteração na sua visão. Agende com nossos profissionais e aproveite: você ganhou 10% de cashback para atualizar seu exame de vista! Feliz Dia das Mães, com saúde e carinho! ❤️`
 ,
             "error"
         ).then((result) => {
