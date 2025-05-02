@@ -52,11 +52,11 @@ html, body {
     position: relative;
     z-index: 1;
     background: white;
-    padding: 50px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 30px 30px; /* Reduzi o padding para deixar o conteúdo mais compacto */
+    border-radius: 15px; /* Reduzi o border-radius para um arredondamento mais suave */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Reduzi a sombra para ficar mais sutil */
     text-align: center;
-    max-width: 500px;
+    max-width: 400px; /* Reduzi o tamanho máximo para deixar menor */
     width: 90%;
     backdrop-filter: blur(4px);
     border: 2px solid #f7dce8;
