@@ -214,7 +214,7 @@ form button:hover {
     max-width: 80%; /* Ajusta a imagem para ser um pouco menor */
     max-height: 300px; /* Limita a altura vertical da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    margin-top: 05px; /* Espaçamento entre o texto e a imagem */
+    margin-top: 10px; /* Espaçamento entre o texto e a imagem */
     display: block; /* Faz a imagem ser tratada como um bloco */
     margin-left: auto; /* Centraliza horizontalmente */
     margin-right: auto; /* Centraliza horizontalmente */
