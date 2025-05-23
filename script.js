@@ -23,7 +23,7 @@ function enviarFormulario(event) {
     // Mensagem baseada no número de respostas "não"
     if (respostasNao >= 4) {
         exibirMensagemSwal(
-            `Olá ${nome}! ,Sua visão está ótima e queremos mantê-la assim! Agende sua consulta na Óticas Alves e aproveite: você ganhou 10% de cashback no exame. Feliz Dia das Mães, com amor e saúde! ❤️`,
+            `Olá, ${nome},Sua visão está ótima! No entanto, que tal uma consulta com a equipe da Óticas Alves para garantir que tudo continue assim? Estamos ansiosos para te atender`,
             "success"
         ).then((result) => {
             if (result.isConfirmed) {
@@ -32,8 +32,7 @@ function enviarFormulario(event) {
         });
     } else {
         exibirMensagemSwal(
-            `Olá ${nome}! Detectamos uma alteração na sua visão. Agende com nossos profissionais e aproveite: você ganhou 10% de cashback para atualizar seu exame de vista! Feliz Dia das Mães, com saúde e carinho! ❤️`
-,
+            `Olá, ${nome}, Detectamos uma alteração no seu teste de visão. Para garantir sua saúde ocular, estamos redirecionando você para entrar em contato com um de nossos profissionais. Estamos aqui para ajudar você a cuidar da sua visão!`,
             "error"
         ).then((result) => {
             if (result.isConfirmed) {
@@ -65,8 +64,7 @@ function exibirMensagemSwal(mensagem, tipo) {
 
 // Função para redirecionar para o WhatsApp após confirmação
 function redirecionarWhatsApp(nome) {
-    var mensagem = encodeURIComponent(`Olá, realizei o teste de visão do Dia das Mães e recebi 10% de cashback. Gostaria de agendar minha consulta e aproveitar o desconto.😊`
-);
+    var mensagem = encodeURIComponent(`Olá, sou ${nome} , gostaria de marcar uma consulta.`);
     window.location.href = `https://wa.me/5571981869278?text=${mensagem}`;
 } document.addEventListener('contextmenu', function (e) {
     e.preventDefault(); // Desativa o menu de contexto (clicar com o botão direito)
@@ -115,13 +113,5 @@ setInterval(function () {
         document.body.innerHTML = "<h1 style='text-align:center; margin-top:20%;'>Acesso bloqueado!</h1>";
     }
 }, 1000);
-
-
-
-
-
-
-
-
 
 

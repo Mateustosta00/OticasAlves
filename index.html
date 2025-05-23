@@ -2,68 +2,36 @@
 <html lang="pt-br">
 
 <head>
-    <script src="intro.js"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óticas Alves👓</title>
+    <title>Óticas Alves </title>
     <link rel="stylesheet" href="intro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
+  
 <body>
 
-    <div class="intro-container">
-        <img src="OTICAS ALVES LOGO.png" alt="Logo Óticas Alves" class="logo" />
 
     
-        <h1>A Ótica Alves deseja um Feliz Dia das Mães!</h1>
-        <p class="texto-imagem">
-            Surpreenda sua mãe com um presente único e celebre o amor e a conexão que existem entre vocês!
-            <img src="ChatGPT Image 22 de abr. de 2025, 14_51_39.png" alt="Imagem relacionada ao Dia das Mães" class="imagem-dia-das-maes" />
-        </p>
-        
-        
-        <form id="contatoForm" onsubmit="salvarContato(event)">
-            <label for="telefone" class="visually-hidden">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
-            <button type="submit">Iniciar o teste</button>
-        </form>
-    </div>
+    <div class="intro-container">
+        <img src="OTICAS ALVES LOGO.png" alt="Logo Óticas Alves" class="logo" />
+        <div class="intro-container">
+            <h1> Bem-vindo(a) à Óticas Alves!</h1>
+            <p>
+                Prepare-se para cuidar da sua visão com um teste simples, rápido e online.<br>
+                Em poucos minutos, você poderá entender melhor sua saúde visual — de forma prática e gratuita!
+            </p>
 
+            <form id="contatoForm" onsubmit="salvarContato(event)">
 
+                <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
+                <button type="submit">Começar o Teste</button>
+            </form>
+        </div>
 
-<!-- Elementos de corações caindo -->
-<div class="hearts-container"></div>
-<script>
-    function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerHTML =  '&#10084;'; // O emoji do coração
-
-        // Definir posições aleatórias
-        const x = Math.random() * window.innerWidth; // Posição aleatória no eixo X
-        const delay = Math.random() * 5 + 2; // Tempo aleatório de animação para cada coração
-
-        heart.style.left = `${x}px`; // Posição aleatória no eixo X
-        heart.style.animationDuration = `${delay}s`; // Definir a duração da animação
-
-        // Adicionar o coração à tela
-        document.querySelector('.hearts-container').appendChild(heart);
-
-        // Remover o coração após a animação
-        setTimeout(() => {
-            heart.remove();
-        }, delay * 1000);
-    }
-
-    // Criar um coração a cada 0.5 segundos
-    setInterval(createHeart, 500);
-</script>
-
-
+        <script src="intro.js"></script>
 </body>
 
 </html>

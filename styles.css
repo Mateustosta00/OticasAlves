@@ -3,23 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 100vw; /* Impede qualquer elemento de ultrapassar a largura da tela */
-}
-
-/* Garantir que o body e html não causem overflow horizontal */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* Impede o scroll horizontal */
 }
 
 /* Corpo da página */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: #ff66b2;
+    background-color: #f5f7fa;
+    color: #333;
     line-height: 1.7;
     scroll-behavior: smooth;
-    font-size: 16px; /* Tamanho base */
 }
 
 /* Container geral */
@@ -31,9 +23,6 @@ body {
     border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Impede o scroll horizontal */
 }
 
 /* Logo no topo */
@@ -46,16 +35,35 @@ body {
 /* Títulos principais */
 h1 {
     text-align: center;
-    color: #ff66b2;
+    color: #104a8d;
     margin-bottom: 30px;
     font-size: 2.5em;
     font-weight: bold;
     text-shadow: 1px 1px 2px #ccc;
     animation: fadeInUp 1s ease-in-out;
-    width: 100%;
-    box-sizing: border-box;
 }
 
+/* Subtítulo */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #104a8d;
+    font-size: 1.5em;
+    font-weight: 600;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #104a8d;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+    animation: growBar 0.8s ease-out;
+}
 
 /* Grupos de perguntas */
 .form-group {
@@ -91,7 +99,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #ff66b2;
+    border-color: #104a8d;
     box-shadow: 0 0 5px rgba(16, 74, 141, 0.3);
 }
 
@@ -103,13 +111,9 @@ input[type="radio"] {
 
 /* Labels */
 label {
-    font-size: 20px;
+    font-size: 17px;
     color: #222;
     font-weight: 500;
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.5px;
 }
 
 /* Botão de envio */
@@ -117,7 +121,7 @@ button[type="submit"] {
     display: block;
     width: 100%;
     padding: 14px;
-    background-color: #ff66b2;
+    background-color: #104a8d;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -128,13 +132,13 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: linear-gradient(to right, #b30059, #ff99cc);
+    background-color: #0c3a6d;
     transform: scale(1.02);
 }
 
 /* Rodapé */
 footer {
-    background: linear-gradient(to right, #b30059, #ff99cc);
+    background-color: #104a8d;
     color: #fff;
     padding: 30px 20px;
     margin-top: 50px;
@@ -160,39 +164,12 @@ footer>div {
     flex-wrap: wrap;
 }
 
-/* ========== Responsividade ========== */
 @media screen and (max-width: 600px) {
-    body {
-        font-size: 14px; /* Ajuste para telas menores */
-    }
-
     .container {
-        padding: 20px 15px;
-        margin: 15px auto;
-    }
-
-    h1 {
-        font-size: 1.8em; /* Ajuste no tamanho do título */
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-
-    .form-group {
-        margin-bottom: 20px; /* Reduz o espaçamento entre campos */
-    }
-
-    input[type="text"] {
-        font-size: 14px; /* Ajuste no tamanho da fonte */
-    }
-
-    button[type="submit"] {
-        font-size: 16px; /* Ajuste no tamanho do botão */
+        padding: 25px 15px;
     }
 
     footer {
-        padding: 15px 10px;
         text-align: center;
     }
 
@@ -246,42 +223,5 @@ footer>div {
 
     to {
         width: 50px;
-    }
-}
-
-/* Contêiner dos corações */
-.hearts-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* evita overflow lateral */
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* Corações caindo */
-.hearts-container .heart {
-    position: absolute;
-    left: 0;
-    right: auto;
-    max-width: 100%;
-    font-size: 3.125rem;
-    color: #ff66b2;
-    animation: heartFall 4s infinite ease-in;
-    opacity: 0;
-    white-space: nowrap;
-}
-
-/* Animação de queda dos corações */
-@keyframes heartFall {
-    0% {
-        transform: translateY(-100px) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(calc(100% + 100px)) scale(1.2);
-        opacity: 0;
     }
 }
